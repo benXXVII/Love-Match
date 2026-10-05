@@ -1,0 +1,892 @@
+/* =========================================
+   LOVE MATCH - MAIN STYLES
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-red: #ff5c7a;
+    --dark-red: #e6395c;
+    --light-red: #fff0f3;
+    --soft-pink: #ffe1e8;
+    --pink: #ff8fa3;
+    --white: #ffffff;
+    --text-dark: #3d2630;
+    --text-light: #806a72;
+    --shadow: rgba(255, 92, 122, 0.25);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #ffe5eb 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #ffdce5 0%, transparent 35%),
+        var(--light-red);
+
+    color: var(--text-dark);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND HEARTS
+   ========================================= */
+
+.background-hearts {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+.background-hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.15;
+
+    animation: floatingHeart 12s linear infinite;
+}
+
+
+.background-hearts span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+
+.background-hearts span:nth-child(2) {
+    left: 18%;
+    animation-delay: 3s;
+}
+
+
+.background-hearts span:nth-child(3) {
+    left: 32%;
+    animation-delay: 6s;
+}
+
+
+.background-hearts span:nth-child(4) {
+    left: 48%;
+    animation-delay: 2s;
+}
+
+
+.background-hearts span:nth-child(5) {
+    left: 63%;
+    animation-delay: 5s;
+}
+
+
+.background-hearts span:nth-child(6) {
+    left: 75%;
+    animation-delay: 8s;
+}
+
+
+.background-hearts span:nth-child(7) {
+    left: 87%;
+    animation-delay: 4s;
+}
+
+
+.background-hearts span:nth-child(8) {
+    left: 95%;
+    animation-delay: 7s;
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: translateY(-50vh) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.love-container {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.love-card {
+    width: 100%;
+    max-width: 760px;
+
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 25px 70px rgba(180, 50, 80, 0.15),
+        0 5px 20px rgba(180, 50, 80, 0.08);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.logo-heart {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #ff5c7a,
+        #ff8fa3
+    );
+
+    border-radius: 50%;
+
+    font-size: 35px;
+
+    box-shadow:
+        0 10px 25px rgba(255, 92, 122, 0.3);
+
+    animation: heartBeat 2s infinite;
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.08);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+
+.header h1 {
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(42px, 8vw, 68px);
+
+    color: var(--primary-red);
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+
+.header p {
+    color: var(--text-light);
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   NAME INPUTS
+   ========================================= */
+
+.names-container {
+    display: grid;
+
+    grid-template-columns: 1fr 70px 1fr;
+
+    align-items: end;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.name-box label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: var(--text-dark);
+
+    margin-bottom: 9px;
+}
+
+
+.input-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    height: 58px;
+
+    padding: 0 17px;
+
+    background: #fff7f8;
+
+    border: 2px solid #ffd6df;
+
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+}
+
+
+.input-wrapper:focus-within {
+    border-color: var(--primary-red);
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(255, 92, 122, 0.1);
+}
+
+
+.input-wrapper span {
+    font-size: 20px;
+}
+
+
+.input-wrapper input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text-dark);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+}
+
+
+.input-wrapper input::placeholder {
+    color: #b69da5;
+}
+
+
+/* =========================================
+   HEART DIVIDER
+   ========================================= */
+
+.heart-divider {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--soft-pink);
+
+    border-radius: 50%;
+
+    font-size: 24px;
+
+    animation: dividerBeat 1.5s infinite;
+}
+
+
+@keyframes dividerBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================
+   CALCULATE BUTTON
+   ========================================= */
+
+.calculate-button {
+    width: 100%;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #ff5c7a,
+        #e6395c
+    );
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(230, 57, 92, 0.25);
+
+    transition: 0.3s ease;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.calculate-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(230, 57, 92, 0.35);
+}
+
+
+.calculate-button:active {
+    transform: translateY(0);
+}
+
+
+.button-heart {
+    font-size: 19px;
+}
+
+
+/* =========================================
+   ERROR
+   ========================================= */
+
+.error-message {
+    text-align: center;
+
+    color: #d62839;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    min-height: 20px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   RESULT
+   ========================================= */
+
+.result {
+    margin-top: 35px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: #fff5f7;
+
+    border: 2px solid #ffe0e6;
+
+    animation: resultAppear 0.7s ease;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.result-names {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+.result-heart {
+    font-size: 22px;
+
+    animation: heartBeat 1.2s infinite;
+}
+
+
+.result-emoji {
+    font-size: 65px;
+
+    margin: 15px 0 5px;
+
+    animation: emojiPop 0.7s ease;
+}
+
+
+@keyframes emojiPop {
+
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.percentage-container {
+    font-weight: 800;
+
+    color: var(--primary-red);
+
+    line-height: 1;
+
+    margin: 5px 0 15px;
+}
+
+
+#percentage {
+    font-size: clamp(65px, 15vw, 100px);
+}
+
+
+.percent-sign {
+    font-size: 35px;
+}
+
+
+.result h2 {
+    font-size: 23px;
+
+    margin-bottom: 8px;
+}
+
+
+.result p {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+   ========================================= */
+
+.progress-container {
+    width: 100%;
+
+    height: 14px;
+
+    margin: 25px auto;
+
+    background: #f0dce1;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    transition: width 1.2s ease;
+}
+
+
+/* =========================================
+   RESULT COLORS
+   ========================================= */
+
+/* Below 30 */
+.result.red .result-emoji,
+.result.red #percentage {
+    color: #e63946;
+}
+
+
+.result.red .progress-bar {
+    background: #e63946;
+}
+
+
+/* 31 - 69 */
+.result.yellow .result-emoji,
+.result.yellow #percentage {
+    color: #e6a700;
+}
+
+
+.result.yellow .progress-bar {
+    background: #f4c430;
+}
+
+
+/* 70 - 89 */
+.result.green .result-emoji,
+.result.green #percentage {
+    color: #2e9d55;
+}
+
+
+.result.green .progress-bar {
+    background: #35b963;
+}
+
+
+/* 90 - 100 */
+.result.blue .result-emoji,
+.result.blue #percentage {
+    color: #2478e5;
+}
+
+
+.result.blue .progress-bar {
+    background: #2478e5;
+}
+
+
+.result.counting .result-emoji {
+    visibility: hidden;
+}
+
+
+/* =========================================
+   TRY AGAIN
+   ========================================= */
+
+.try-again {
+    margin-top: 5px;
+
+    padding: 12px 25px;
+
+    border: 2px solid var(--primary-red);
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: var(--primary-red);
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.try-again:hover {
+    background: var(--primary-red);
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #a58b94;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   HEART POPUP ANIMATION
+   ========================================= */
+
+.flying-heart {
+    position: fixed;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    animation: flyHeart 2.5s ease-out forwards;
+}
+
+
+@keyframes flyHeart {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0)
+            scale(0.5)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                -100vh
+            )
+            scale(1.5)
+            rotate(var(--rotation));
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .love-card {
+        padding: 35px 25px;
+    }
+
+
+    .names-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        align-items: center;
+    }
+
+
+    .heart-divider {
+        margin: 0 auto;
+    }
+
+
+    .name-box {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .love-container {
+        padding: 15px;
+    }
+
+
+    .love-card {
+        padding: 30px 18px;
+
+        border-radius: 24px;
+    }
+
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+
+    .logo-heart {
+        width: 65px;
+        height: 65px;
+
+        font-size: 30px;
+    }
+
+
+    .header h1 {
+        font-size: 44px;
+    }
+
+
+    .header p {
+        font-size: 13px;
+    }
+
+
+    .input-wrapper {
+        height: 55px;
+    }
+
+
+    .calculate-button {
+        height: 57px;
+    }
+
+
+    .result {
+        padding: 25px 15px;
+    }
+
+
+    .result-names {
+        font-size: 15px;
+    }
+
+
+    .result-emoji {
+        font-size: 55px;
+    }
+
+
+    footer {
+        margin-top: 25px;
+    }
+}

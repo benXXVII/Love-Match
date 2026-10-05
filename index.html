@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LoveMatch ❤️ - Love Compatibility Calculator</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating background hearts -->
+    <div class="background-hearts">
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💗</span>
+        <span>💖</span>
+        <span>💘</span>
+        <span>💓</span>
+        <span>❤️</span>
+        <span>💕</span>
+    </div>
+
+    <!-- Main Container -->
+    <main class="love-container">
+
+        <section class="love-card">
+
+            <!-- Logo / Title -->
+            <div class="header">
+                <div class="logo-heart">❤️</div>
+
+                <h1>LoveMatch</h1>
+
+                <p>
+                    Discover your love compatibility
+                </p>
+            </div>
+
+            <!-- Names -->
+            <div class="names-container">
+
+                <!-- Person 1 -->
+                <div class="name-box">
+                    <label for="name1">
+                        Your Name
+                    </label>
+
+                    <div class="input-wrapper">
+                        <span>💗</span>
+
+                        <input
+                            type="text"
+                            id="name1"
+                            placeholder="Enter your name"
+                            maxlength="30"
+                            autocomplete="off"
+                        >
+                    </div>
+                </div>
+
+
+                <!-- Heart Between Names -->
+                <div class="heart-divider">
+                    ❤️
+                </div>
+
+
+                <!-- Person 2 -->
+                <div class="name-box">
+                    <label for="name2">
+                        Your Lover's Name
+                    </label>
+
+                    <div class="input-wrapper">
+                        <span>💗</span>
+
+                        <input
+                            type="text"
+                            id="name2"
+                            placeholder="Enter your lover's name"
+                            maxlength="30"
+                            autocomplete="off"
+                        >
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Calculate Button -->
+            <button id="calculateBtn" class="calculate-button">
+                <span>Calculate Love</span>
+                <span class="button-heart">❤️</span>
+            </button>
+
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message"></div>
+
+
+            <!-- Result -->
+            <section id="result" class="result hidden">
+
+                <div class="result-names">
+                    <span id="resultName1">Name</span>
+                    <span class="result-heart">❤️</span>
+                    <span id="resultName2">Name</span>
+                </div>
+
+                <div id="resultEmoji" class="result-emoji">
+                    💕
+                </div>
+
+                <div class="percentage-container">
+                    <span id="percentage">0</span>
+                    <span class="percent-sign">%</span>
+                </div>
+
+                <h2 id="resultTitle">
+                    Love Match!
+                </h2>
+
+                <p id="resultMessage">
+                    Your love compatibility is amazing!
+                </p>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+
+                <button id="tryAgainBtn" class="try-again">
+                    Try Again 💕
+                </button>
+
+            </section>
+
+
+            <!-- Footer -->
+            <footer>
+                Made with ❤️ for love
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- Heart Popups Container -->
+    <div id="heartContainer"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
